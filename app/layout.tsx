@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ModalProvider from "@/components/ModalProvider";
+import AuthorModal from "@/components/modals/AuthorModal";
+import PostModal from "@/components/modals/PostModal";
+import { Navbar } from "@/components/Navbar";
+import ToasterProvider from "@/components/ToasterProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ToasterProvider />
+        <Navbar/>
+        <AuthorModal/>
+        <PostModal/>
+        {children}
+      </body>
     </html>
   );
 }
