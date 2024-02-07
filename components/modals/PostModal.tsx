@@ -17,6 +17,7 @@ import usePostModal from "@/hooks/usePostModal";
 import Modal from "./Modal";
 import Input from "@/components/Input";
 import Heading from "../Heading";
+import axios from "axios";
 
 const PostModal = () => {
   const postModal = usePostModal();
@@ -38,29 +39,19 @@ const PostModal = () => {
   });
   
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    try {
-        const response = await fetch('/api/posts', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-            body: JSON.stringify(data),
-        });
+      try {
+        const response = await axios.post('/api/posts', data);
+        const postData = response.data;
 
-        if (!response.ok) {
-            toast.error('Failed')
-            throw new Error('Failed to add post');
-        }
-
-        const postData = await response.json();
-        toast.success('Post added')
+        toast.success('Post added');
         console.log('Post data:', postData);
         postModal.onClose();
         router.refresh();
 
-    } catch (error) {
-        console.error('Error adding post:', error);
-    }
+      } catch (error : any) {
+        console.error('Error adding post:', error.response ? error.response.data : error);
+        toast.error('Failed to add post');
+      }
   }
 
   const bodyContent = (
