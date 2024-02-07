@@ -51,11 +51,7 @@ export default function AuthorsPage() {
           {authors.map(author => (
             <AuthorCard 
                 //@ts-ignore
-                firstName={author.firstName!}
-                //@ts-ignore
-                lastName={author.lastName}
-                //@ts-ignore
-                posts={author.posts}
+                key={author.id} firstName={author.firstName!} lastName={author.lastName} posts={author.posts}
             />
           ))}
           

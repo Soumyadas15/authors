@@ -70,17 +70,11 @@ export default function Home() {
           {posts.map(post => (
             <PostCard 
                 //@ts-ignore
-                id={post.id}
+                key = {post.id} id={post.id} author={post.author!} 
                 //@ts-ignore
-                author={post.author!}
+                body={post.body!} views={post.views} 
                 //@ts-ignore
-                body={post.body!} 
-                //@ts-ignore
-                views={post.views}
-                //@ts-ignore
-                reviews={post.reviews}
-                //@ts-ignore
-                onDelete={handleDeletePost}
+                reviews={post.reviews} onDelete={handleDeletePost}
             />
           ))}
           
