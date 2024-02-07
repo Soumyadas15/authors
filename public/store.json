@@ -1,4 +1,12 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "id": 1,
+      "author": "z",
+      "body": "sss",
+      "reviews": "ss",
+      "views": "ss"
+    }
+  ],
   "authors": []
 }
