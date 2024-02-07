@@ -16,7 +16,7 @@ const writeStoreFile = (data: any) => {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function handler(req: NextApiRequest, res: NextApiResponse) {
     const storeData = readStoreFile();
 
     switch (req.method) {

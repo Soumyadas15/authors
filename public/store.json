@@ -2,17 +2,17 @@
   "posts": [
     {
       "id": 1,
-      "author": "z",
-      "body": "sss",
-      "reviews": "ss",
-      "views": "ss"
+      "author": "rrfrfrew",
+      "body": "wjkwqj",
+      "reviews": "sjasksj",
+      "views": "djwwee"
     },
     {
       "id": 2,
-      "author": "aa",
-      "body": "ss",
-      "reviews": "ss",
-      "views": "ss"
+      "author": "John Doe",
+      "body": "This is a test post",
+      "reviews": "10",
+      "views": "100"
     }
   ],
   "authors": []
