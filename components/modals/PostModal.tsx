@@ -40,7 +40,7 @@ const PostModal = () => {
   
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
       try {
-        const response = await axios.post('/api/posts', data);
+        const response = await axios.post(`https://authors-eight.vercel.app/api/posts`, data);
         const postData = response.data;
 
         toast.success('Post added');

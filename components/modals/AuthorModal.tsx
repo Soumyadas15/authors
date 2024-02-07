@@ -40,7 +40,7 @@ const AuthorModal = () => {
   
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-        const response = await fetch('/api/authors', {
+        const response = await fetch('https://authors-eight.vercel.app/api/authors', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
